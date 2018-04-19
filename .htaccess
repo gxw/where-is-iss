@@ -1,0 +1,6 @@
+﻿<IfModule mod_rewrite.c>
+
+RewriteEngine On
+RewriteRule ^$ /src [L]
+
+</IfModule>

@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-purple">
+            <div class="box-header with-bolder">
+                <h3>Currently ISS position:  {{ position?.reverse}}</h3>
+            </div>
+            <div class="box-body">
+                <div class="col-md-12">
+                    <ul>
+                        <li>langitude: <b>{{ position?.latitude}}</b></li>
+                        <li>longitude <b>{{ position?.longitude}}</b></li>
+                        <li>date: <b>{{ position?.timestamp * 1000 | date:'medium'}}</b></li>
+                    </ul>
+                </div>
+                <div class="col-md-12">
+                    <button (click)="refreshData()" class="btn btn-warning">Refresh</button>
+                    <hr>
+                </div>
+                <div class="col-md-12">
+                    <sebm-google-map [latitude]="position?.latitude" [longitude]="position?.longitude">
+                        <sebm-google-map-marker [latitude]="position?.latitude" [longitude]="position?.longitude">
+                            <sebm-google-map-info-window [disableAutoPan]="true">
+                                Currently ISS position:  {{ position?.reverse}}
+                            </sebm-google-map-info-window>
+                        </sebm-google-map-marker>
+                    </sebm-google-map>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
