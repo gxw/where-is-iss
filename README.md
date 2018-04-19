@@ -1,1 +1,1 @@
-# where-is-iss
+# Simple Angular2 app - ISS localization
